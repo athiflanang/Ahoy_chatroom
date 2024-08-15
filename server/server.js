@@ -28,10 +28,10 @@ const upload = multer({ storage: storage });
 
 // Enable CORS
 app.use(cors({
-    origin: 'http://localhost:5173', // URL Client
+    origin: 'http://localhost:5173', 
 }));
 
-app.use(cors()); // Middleware untuk menangani CORS
+app.use(cors()); 
 app.use(express.json());
 
 app.post('/upload', upload.single('image'), async (req, res) => {
@@ -61,12 +61,13 @@ io.on('connection', (socket) => {
     console.log('A user connected');
 
     socket.on('joinTopic', (topic) => {
+
         // Leave all existing rooms
         const rooms = Array.from(socket.rooms);
         console.log(rooms);
 
         rooms.forEach(room => {
-            if (room !== socket.id) { // Ensure we don't remove the socket's own room ID
+            if (room !== socket.id) { 
                 socket.leave(room);
             }
         });
