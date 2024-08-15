@@ -112,7 +112,7 @@ _Response (401 - Unauthorized)_
 request :
 
 
-_Response (200 - success read category)_
+_Response (201 - success read category)_
 
 ```json
 {
@@ -136,7 +136,7 @@ _Response (200 - success read category)_
 request :
 
 
-_Response (201 - success upload image)_
+_Response (200 - success upload image)_
 
 ```json
 {
@@ -146,7 +146,7 @@ _Response (201 - success upload image)_
 
 &nbsp;
 
-error :
+Other error :
 
 _Response (500 - internal server error)_
  ```json
@@ -168,5 +168,3 @@ _Response (404 - notfound)_
    "message": "Not Found"
 },
 ```
-
-
