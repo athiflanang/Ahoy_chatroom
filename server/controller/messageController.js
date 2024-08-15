@@ -10,7 +10,7 @@ class messageController {
         api_secret: process.env.CLOUDINARY_API_SECRET
       })
 
-      const { UserId } = req.loginInfo
+      // const { UserId } = req.loginInfo
 
       const file = req.file
 
@@ -20,7 +20,11 @@ class messageController {
         `data:${file.mimetype};base64,${base64}`
       )
 
-      await Message.create({ message: output.secure_url, UserId })
+      //testing upload image manually
+      const UserId = 2
+      const CategoryId = 2
+
+      await Message.create({ message: output.secure_url, UserId, CategoryId })
 
       res.status(200).json({
         message: `successfully add image`

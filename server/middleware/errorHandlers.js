@@ -19,12 +19,12 @@ const errorHandler = (error, req, res, next) => {
   }
 
   if (error.name === 'InvalidLogin') {
-    message = 'Please insert your username, email or password (400)'
+    message = 'Please insert your username or password (400)'
     status = 400
   }
 
   if (error.name === 'LoginError') {
-    message = 'Invalid or wrong username, email or password (401)'
+    message = 'Invalid or wrong username or password (401)'
     status = 401
   }
 
