@@ -49,7 +49,7 @@ const ChatSkeleton = () => {
             formData.append('image', image);
 
             try {
-                const res = await axios.post('http://localhost:3001/upload', formData, {
+                const res = await axios.post('https://server.halofarhan.my.id/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
