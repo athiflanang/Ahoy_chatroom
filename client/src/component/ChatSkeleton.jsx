@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useProfile } from '../../ProfileContext';
 
-const socket = io.connect('http://localhost:3001');
+const socket = io.connect('https://server.halofarhan.my.id/');
 
 const ChatSkeleton = () => {
     const { topic } = useParams();
