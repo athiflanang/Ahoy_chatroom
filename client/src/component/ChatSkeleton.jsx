@@ -113,9 +113,9 @@ const ChatSkeleton = () => {
     };
 
     return (
-        <div className="p-4">
+        <div className="p-4 bg-white">
             <div className='flex justify-between'>
-                <h2 className="text-2xl font-bold mb-4">{topic.charAt(0).toUpperCase() + topic.slice(1)} Chat</h2>
+                <h2 className="text-2xl text-neutral-950 font-bold mb-4">{topic.charAt(0).toUpperCase() + topic.slice(1)} Discussion</h2>
                 <label className="inline-flex items-center cursor-pointer mb-4">
                     <input
                         type="checkbox"
@@ -128,7 +128,7 @@ const ChatSkeleton = () => {
                 </label>
             </div>
 
-            <div className="chat-box h-[75vh] overflow-y-scroll border p-2 mb-4">
+            <div className="chat-box h-[75vh] bg-white overflow-y-scroll border p-2 mb-4">
                 {messages.map((msg, index) => (
                     <div
                         key={index}
@@ -159,7 +159,7 @@ const ChatSkeleton = () => {
                                     : 'bg-[#EFF1F4] text-gray-900 rounded-e-xl rounded-es-xl'
                                     } mb-4`}
                             >
-                                <p className="text-sm font-normal py-2.5">
+                                <p className="text-sm font-normal py-2.5 pt-3 pb-1">
                                     {msg.text}
                                 </p>
                                 {msg.image && msg.image === 'loading' ? (
@@ -167,7 +167,7 @@ const ChatSkeleton = () => {
                                 ) : (
                                     msg.image && <img src={msg.image} alt="chat-image" className="max-w-xs rounded-xl mb-1" />
                                 )}
-                                <span className={`text-sm font-normal ${msg.user === username
+                                <span className={`text-xs font-normal ${msg.user === username
                                     ? 'text-gray-300'
                                     : 'text-gray-400'
                                     } `}>
@@ -218,7 +218,7 @@ const ChatSkeleton = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Enter your message"
-                    className="flex-grow p-2 border rounded-l"
+                    className="flex-grow p-2 border rounded-l bg-white text-black"
                     disabled={isLoading}
                 />
                 <button

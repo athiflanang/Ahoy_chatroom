@@ -8,26 +8,24 @@ import TopicSelection from "../views/TopicSelection";
 import Chat from "../component/Chat";
 import LoginPage from "../views/LoginPage";
 import ChatSkeleton from "../component/ChatSkeleton";
+import LandingPage from "../views/LandingPage";
 
 const router = createBrowserRouter([
+ 
     {
-        path: "/login",
-        element: <LoginPage />,
-    },
-    {
-        path: "/",
+        path: "/topic",
         element: <TopicSelection />,
         loader: () => {
             if (!localStorage.username) {
-                return redirect('/login')
+                return redirect('/')
             }
 
             return null
         }
     },
     {
-        path: "/:topic/chat-test",
-        element: <ChatSkeleton />,
+        path: "/",
+        element: <LandingPage/>
     },
     {
         path: "/:topic",
