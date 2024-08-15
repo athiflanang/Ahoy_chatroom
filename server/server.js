@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: 'http://localhost:5173', // URL frontend Anda
+        origin: ['http://localhost:5173', 'https://disc-hub.vercel.app'], // URL frontend Anda
         methods: ['GET', 'POST'],
         allowedHeaders: ['Content-Type'],
     },
@@ -28,7 +28,7 @@ const upload = multer({ storage: storage });
 
 // Enable CORS
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: ['http://localhost:5173','https://disc-hub.vercel.app'], 
 }));
 
 app.use(cors()); 
